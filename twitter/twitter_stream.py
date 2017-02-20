@@ -1,10 +1,18 @@
 # -*- coding:utf-8 -*-
 
+import sys
+import os.path
 from twitter import *
 from ConfigParser import SafeConfigParser
 
+filename = 'key'
+
+if not os.path.exists(filename):
+      print 'File not found : ' + filename
+      sys.exit()
+
 parser = SafeConfigParser()
-parser.read('key')
+parser.read(filename)
 
 access_key = parser.get('key', 'access_key')
 access_secret = parser.get('key', 'access_secret')
