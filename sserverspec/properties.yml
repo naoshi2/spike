@@ -1,0 +1,8 @@
+db.127.0.0.1:
+   :roles:
+     - db
+   :server_id: 102
+
+web.127.0.0.1:
+    :roles:
+      - web

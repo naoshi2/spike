@@ -1,5 +1,6 @@
 require 'serverspec'
 require 'net/ssh'
+require 'yaml'
 
 set :backend, :ssh
 
@@ -14,7 +15,10 @@ else
   set :sudo_password, ENV['SUDO_PASSWORD']
 end
 
-host = ENV['TARGET_HOST']
+properties = YAML.load_file('properties.yml')
+longname = ENV['TARGET_HOST']
+@property = properties[longname]
+host = longname.split('.', 2)[1]
 
 options = Net::SSH::Config.for(host)
 
