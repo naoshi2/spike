@@ -16,6 +16,7 @@ namespace :spec do
     RSpec::Core::RakeTask.new(key.split('.')[0].to_sym) do |t|
       ENV['TARGET_HOST'] = key
       t.pattern = 'spec/{' + properties[key][:roles].join(',') + '}/*_spec.rb'
+      t.fail_on_error = false
     end
   end
 end
