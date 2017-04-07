@@ -19,7 +19,7 @@ properties = YAML.load_file('properties.yml')
 longname = ENV['TARGET_HOST']
 @property = properties[longname]
 host = longname.split('.', 2)[1]
-print "Target host is : " + host.to_s
+print "Target host is : " + host.to_s + "\n"
 
 options = Net::SSH::Config.for(host)
 
