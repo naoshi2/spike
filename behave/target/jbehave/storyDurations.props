@@ -1,6 +1,0 @@
-#org.jbehave.core.embedder.StoryManager
-#Mon Apr 24 01:59:11 JST 2017
-resources/hoge.story=0
-threads=1
-total=0
-threadAverage=0
