@@ -6,10 +6,15 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html', message="Home")
 
+def getStr():
+	return "haaaaaaaa"
+
 @app.route("/hoge")
 def hoge():
 	lst = [1, 2, 3]
-	return render_template('hoge.html', message="Hogeee", lst = lst)
+	message = getStr()
+	return render_template('hoge.html', message=message, lst = lst)
+
 
 if __name__ == "__main__":
 	app.run()
