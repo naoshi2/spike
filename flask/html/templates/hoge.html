@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>e</title>
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<p>{{message}}</p>
+
+<input type="text" id="msg" value="Hoooo"/>
+<button id="sendBtn">send</button>
+<button id="button">Clear</button>
+<ul id="rcv"></ul>
+
+<script>
+	$(function() {
+		var socket = new WebSocket("ws://127.0.0.1:5000/echo");
+
+		socket.onmessage = function(message){
+    			$("#rcv").append("<li>" + message.data + "</li>")
+    			console.log(message.data);
+  		}
+
+		$("#sendBtn").on("click",function(){
+    			message = $("#msg").val()
+    			socket.send(message);
+		});
+	})
+
+	$('#button').click(function(e){
+		$("#list").remove();
+	});
+
+	$(function(){
+		$('p').click(function() { $('<li id="list">{{message}}</li>').appendTo('p');} );
+	});
+</script>
+</body>
+</html>
