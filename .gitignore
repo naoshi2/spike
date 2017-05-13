@@ -1,7 +1,6 @@
 key
 #
 .*.swp
-*.html
 *.stats
 *.props
 *.class
