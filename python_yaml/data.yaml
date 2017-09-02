@@ -1,0 +1,14 @@
+aaa: 
+ text: tweeeet1
+ img: aaa.jpg
+ hashtag: "#nhk #ntv"
+
+bbb:
+ text: tweeeet2
+ img: bbb.jpg
+ hashtag: "#ntv"
+
+aaa:
+ text: tweeeet3
+ img: ccc.jpg
+ hashtag: "#TBS"
